@@ -3,6 +3,7 @@ const teaApp = {} ;
 teaApp.baseURL = `https://developers.zomato.com/api/v2.1/search`;
 teaApp.apiKey = `ab555e02f8cc7344c070a66a218852f7`;
 
+
 teaApp.getTea = function (number) {
     $.ajax({
         url: `https://developers.zomato.com/api/v2.1/search`,
@@ -14,6 +15,7 @@ teaApp.getTea = function (number) {
         data: {
             entity_id:89,
             entity_type:'city',
+
             cuisines: 247,
             count:20,
             start: number,
@@ -23,6 +25,14 @@ teaApp.getTea = function (number) {
         // console.log(result);
         teaApp.getRestaurant(result);
  
+
+            
+            
+        }
+    }).then( function (result) {
+        console.log(result);
+        console.log('hi');
+
     
     }).catch(function(error){
         console.log(error);
@@ -30,6 +40,7 @@ teaApp.getTea = function (number) {
     });
     
 }
+
 
 
 
@@ -54,5 +65,7 @@ $(document).ready(function(){
         teaApp.getTea(i);
     }
 })
+
+
 
 
