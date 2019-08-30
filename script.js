@@ -3,14 +3,8 @@ const teaApp = {} ;
 teaApp.baseURL = `https://developers.zomato.com/api/v2.1/search`;
 teaApp.apiKey = `ab555e02f8cc7344c070a66a218852f7`;
 
-<<<<<<< Updated upstream
-teaApp.getTea = function () {
-    console.log('hello');
-    
-=======
-
 teaApp.getTea = function (cuisineId){
->>>>>>> Stashed changes
+
     $.ajax({
         url: `https://developers.zomato.com/api/v2.1/search`,
         headers: {
@@ -21,14 +15,6 @@ teaApp.getTea = function (cuisineId){
         data: {
             entity_id:89,
             entity_type:'city',
-<<<<<<< Updated upstream
-            cuisines:247,
-            
-        }
-    }).then( function (result) {
-        console.log(result);
-        console.log('hi');
-=======
             lat: 43.6483,
             lon: -79.3979,
             cuisines: cuisineId,
@@ -40,21 +26,7 @@ teaApp.getTea = function (cuisineId){
         teaApp.getRestaurant(result);
             
         });
->>>>>>> Stashed changes
-    
-    // }).catch(function(error){
-    //     console.log(error);
-        
-    }
-    
-<<<<<<< Updated upstream
-}
 
-
-$(document).ready(function(){
-    teaApp.getTea()
-})
-=======
 
 teaApp.getRestaurant = function(result){
     console.log(result.restaurants);
@@ -103,5 +75,3 @@ $(document).ready(function(){
 })
 
 
-
->>>>>>> Stashed changes
