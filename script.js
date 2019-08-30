@@ -3,7 +3,9 @@ const teaApp = {} ;
 teaApp.baseURL = `https://developers.zomato.com/api/v2.1/search`;
 teaApp.apiKey = `ab555e02f8cc7344c070a66a218852f7`;
 
+
 teaApp.getTea = function (cuisineId, number, type) {
+
     $.ajax({
         url: `https://developers.zomato.com/api/v2.1/search`,
         headers: {
@@ -18,27 +20,28 @@ teaApp.getTea = function (cuisineId, number, type) {
             lon: -79.3979,
             cuisines: cuisineId,
             count: number,
+
             sort: type,         
         }
     }).then( function (result) {
         console.log(result);
         teaApp.getRestaurant(result);
     })
-    
-}
-
-
 
 
 teaApp.getRestaurant = function(result){
     console.log(result.restaurants);
 
     result.restaurants.forEach(function(cafe){
+
         console.log('bogo:', cafe.restaurant.include_bogo_offers);
         console.log('name:', cafe.restaurant.name);
         console.log('rating:', cafe.restaurant.user_rating.rating_text);
         console.log('aggregate-rating', cafe.restaurant.user_rating.aggregate_rating);
         console.log('cost-for-two:', cafe.restaurant.average_cost_for_two);
+
+        
+
 
         if (cafe.restaurant.thumb) {
             const foodHtml = `
@@ -72,8 +75,9 @@ $(document).ready(function(){
 
         teaApp.getTea(foodChoice, countChoice, sortChoice);
 
-
-    })
+        $('.container').empty();
+        teaApp.getTea(foodChoice);
+    });
 })
 
 
