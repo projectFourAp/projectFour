@@ -3,7 +3,9 @@ const teaApp = {} ;
 teaApp.baseURL = `https://developers.zomato.com/api/v2.1/search`;
 teaApp.apiKey = `ab555e02f8cc7344c070a66a218852f7`;
 
-teaApp.getTea = function (cuisineId) {
+
+
+teaApp.getTea = function (cuisineId, number){
     $.ajax({
         url: `https://developers.zomato.com/api/v2.1/search`,
         headers: {
@@ -17,28 +19,36 @@ teaApp.getTea = function (cuisineId) {
             lat: 43.6483,
             lon: -79.3979,
             cuisines: cuisineId,
-            count: 5,
-            sort: 'real_distance',         
-        }
+            count: number,
+            sort: 'real_distance',
+            }
     }).then( function (result) {
         console.log(result);
-        // teaApp.getRestaurant(result);
-    })
+        teaApp.getRestaurant(result);
+            
+        });
     
-}
-
-
-
+    // }).catch(function(error){
+    //     console.log(error);
+        
+    }
+    
 
 teaApp.getRestaurant = function(result){
     console.log(result.restaurants);
     result.restaurants.forEach(function(cafe){
-        console.log('bogo:', cafe.restaurant.include_bogo_offers);
-        console.log('name:', cafe.restaurant.name);
-        console.log('rating:', cafe.restaurant.user_rating.rating_text);
-        console.log('aggregate-rating', cafe.restaurant.user_rating.aggregate_rating);
-        console.log('cost-for-two:', cafe.restaurant.average_cost_for_two);
         
+        const htmlToPost = `
+        <h2>Name: ${cafe.restaurant.name}</h2>
+        
+        <p>${cafe.restaurant.user_rating.rating_text}</p>
+        <p>${cafe.restaurant.user_rating.aggregate_rating}</p>
+        <p>${cafe.restaurant.average_cost_for_two}</p>
+        <img src=${cafe.restaurant.thumb}>`;
+
+        $('.container').append(htmlToPost);
+        
+        console.log(result);
     })
 
 
@@ -63,8 +73,9 @@ $(document).ready(function(){
 
         teaApp.getTea(foodChoice);
 
-
-    })
+        $('.container').empty();
+        teaApp.getTea(foodChoice);
+    });
 })
 
 
