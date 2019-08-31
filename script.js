@@ -66,11 +66,13 @@ foodApp.displayFood = function(result){
         const restaurantImage = cafe.restaurant.thumb
 
         const foodHtml = `
+        <li>
             <p>Name: ${restaurantName}</p>
             <p>Rating: ${restaurantRating}</p>
             <p>Cost for two: ${costForTwo}</p>
             <p>Address: ${restaurantAddress}</p>
             <img src =${restaurantImage}>
+        </li>
         `
 
         if (restaurantImage) {
@@ -85,7 +87,7 @@ foodApp.displayFood = function(result){
 // DEFINE INIT METHOD THAT WILL INITIALIZE ANYTHING THAT NEEDS TO HAPPEN ON PAGE LOAD (START APP)
 foodApp.init = function(){
     // CACHE jQUERY SELECTORS
-    foodApp.$foodContainer = $('.container')
+    foodApp.$foodContainer = $('.restoContainer')
 
     // EVENT HANDLERS
     foodApp.submitEventHandler();
