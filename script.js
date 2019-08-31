@@ -6,20 +6,20 @@ foodApp.apiKey = `ab555e02f8cc7344c070a66a218852f7`;
 
 
 // METHOD THAT CONTAINS AN EVENT LISTENER FOR FORM SUBMIT
-foodApp.submitEventHandler = function(){
+foodApp.submitEventHandler = function() {
     $('form').on('submit', function (e) {
-        //REQUIRED FOR PREVENT DEFAULT BEHAVIOR
+        // TO PREVENT DEFAULT REFRESH
         e.preventDefault();
-        // ERROR HANDLING TO EMPTY OUT CONTAINER AFTER USER PRESSES SUBMIT
+        // TO EMPTY THE PAGE BEFORE ADDING NEW CONTENT ONTO IT
         foodApp.$foodContainer.empty();
-        //TO CALL THE FUNCTION TO GET USER'S INPUT
+        // CALL THE FUNCTION TO GET USER'S INPUT
         foodApp.collectUserInfo();
     });
 }
 
 
-//METHOD THAT COLLECTS USER INPUT AND PASSES THE INFO AS ARGUMENTS TO THE API
-foodApp.collectUserInfo = function() {
+// METHOD THAT COLLECTS USER INPUT AND PASSES THE INFO AS ARGUMENTS TO THE API
+foodApp.collectUserInfo = function () {
         const $foodChoice = $(`input[name=food]:checked`).val();
         const $countChoice = $(`input[name=count]:checked`).val();
         const $sortChoice = $(`input[name=sort]:checked`).val();
@@ -30,8 +30,8 @@ foodApp.collectUserInfo = function() {
 }
 
 
-//METHOD TO PASS THE USER'S SELECTIONS AS ARGUMENTS AND GET FOOD DATA FROM API
-foodApp.getFood = function (cuisineId, number, type)  {
+// METHOD TO PASS THE USER'S SELECTIONS AS ARGUMENTS AND GET FOOD DATA FROM API 
+foodApp.getFood = function (cuisineId, number, type) {
     $.ajax({
         url: foodApp.baseURL,
         headers: {
@@ -54,7 +54,7 @@ foodApp.getFood = function (cuisineId, number, type)  {
 }
 
 
-//METHOD THAT ACCEPTS THE DATA FROM THE API AS AN ARGUMENT AND RENDERS IT TO THE DOM TO ULTIMATELY DISPLAY IT ON THE PAGE
+// METHOD THAT ACCEPTS DATA FROM API AS AN ARGUMENT AND RENDERS IT TO THE DOM TO ULTIMATELY DISPLAY IT ON THE PAGE
 foodApp.displayFood = function(result){
     // console.log(result.restaurants);
     result.restaurants.forEach(function(cafe){
@@ -63,16 +63,16 @@ foodApp.displayFood = function(result){
         const restaurantRating = cafe.restaurant.user_rating.aggregate_rating;
         const costForTwo = cafe.restaurant.average_cost_for_two;
         const restaurantAddress = cafe.restaurant.location.address;
-        const restaurantImage = cafe.restaurant.thumb;
+        const restaurantImage = cafe.restaurant.thumb
 
         const foodHtml = `
-            <p>Name: ${ restaurantName }</p>
+            <p>Name: ${restaurantName}</p>
             <p>Rating: ${restaurantRating}</p>
             <p>Cost for two: ${costForTwo}</p>
             <p>Address: ${restaurantAddress}</p>
             <img src =${restaurantImage}>
-            `
-    
+        `
+
         if (restaurantImage) {
             foodApp.$foodContainer.append(foodHtml);
         }
@@ -82,19 +82,17 @@ foodApp.displayFood = function(result){
 
 
 
-//DEFINE INIT METHOD THAT WILL INITIALIZE ANYTHING THAT NEEDS TO HAPPEN ON PAGE LOAD (START APP)
+// DEFINE INIT METHOD THAT WILL INITIALIZE ANYTHING THAT NEEDS TO HAPPEN ON PAGE LOAD (START APP)
 foodApp.init = function(){
-    //CACHE jQUERY SELECTORS
+    // CACHE jQUERY SELECTORS
     foodApp.$foodContainer = $('.container')
 
-    //EVENT HANDLERS
+    // EVENT HANDLERS
     foodApp.submitEventHandler();
 }
 
 
 $(document).ready(function(){
-    //CALL THE INIT FUNCTION INSIDE jQUERY DOM SO THAT IT EXECUTES ON PAGE LOAD
+    // CALL THE INIT FUNCTION INSIDE JQUERY DOM SO THAT IT EXECUTES ON PAGE LOAD
     foodApp.init();
 })
-
-
