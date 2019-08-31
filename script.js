@@ -1,15 +1,41 @@
-const teaApp = {} ;
+// EMPTY OBJECT THAT WILL HOLD ALL OUR APPLICATION CODE (NAMESPACE APP)
+const foodApp = {} ;
 
-teaApp.baseURL = `https://developers.zomato.com/api/v2.1/search`;
-teaApp.apiKey = `ab555e02f8cc7344c070a66a218852f7`;
+foodApp.baseURL = `https://developers.zomato.com/api/v2.1/search`;
+foodApp.apiKey = `ab555e02f8cc7344c070a66a218852f7`;
 
 
-teaApp.getTea = function (cuisineId, number, type) {
+// METHOD THAT CONTAINS AN EVENT LISTENER FOR FORM SUBMIT
+foodApp.submitEventHandler = function() {
+    $('form').on('submit', function (e) {
+        // TO PREVENT DEFAULT REFRESH
+        e.preventDefault();
+        // TO EMPTY THE PAGE BEFORE ADDING NEW CONTENT ONTO IT
+        foodApp.$foodContainer.empty();
+        // CALL THE FUNCTION TO GET USER'S INPUT
+        foodApp.collectUserInfo();
+    });
+}
 
+
+// METHOD THAT COLLECTS USER INPUT AND PASSES THE INFO AS ARGUMENTS TO THE API
+foodApp.collectUserInfo = function () {
+        const $foodChoice = $(`input[name=food]:checked`).val();
+        const $countChoice = $(`input[name=count]:checked`).val();
+        const $sortChoice = $(`input[name=sort]:checked`).val();
+        console.log($foodChoice);
+        console.log($countChoice);
+        console.log($sortChoice);
+        foodApp.getFood($foodChoice, $countChoice, $sortChoice);
+}
+
+
+// METHOD TO PASS THE USER'S SELECTIONS AS ARGUMENTS AND GET FOOD DATA FROM API 
+foodApp.getFood = function (cuisineId, number, type) {
     $.ajax({
-        url: `https://developers.zomato.com/api/v2.1/search`,
+        url: foodApp.baseURL,
         headers: {
-        'user-key': 'ab555e02f8cc7344c070a66a218852f7',
+        'user-key': foodApp.apiKey,
         },
         method: 'GET',
         dataType: 'json',
@@ -20,64 +46,53 @@ teaApp.getTea = function (cuisineId, number, type) {
             lon: -79.3979,
             cuisines: cuisineId,
             count: number,
-
             sort: type,         
         }
     }).then( function (result) {
-        console.log(result);
-        teaApp.getRestaurant(result);
+        foodApp.displayFood(result);
     })
+}
 
 
-teaApp.getRestaurant = function(result){
-    console.log(result.restaurants);
-
+// METHOD THAT ACCEPTS DATA FROM API AS AN ARGUMENT AND RENDERS IT TO THE DOM TO ULTIMATELY DISPLAY IT ON THE PAGE
+foodApp.displayFood = function(result){
+    // console.log(result.restaurants);
     result.restaurants.forEach(function(cafe){
 
-        console.log('bogo:', cafe.restaurant.include_bogo_offers);
-        console.log('name:', cafe.restaurant.name);
-        console.log('rating:', cafe.restaurant.user_rating.rating_text);
-        console.log('aggregate-rating', cafe.restaurant.user_rating.aggregate_rating);
-        console.log('cost-for-two:', cafe.restaurant.average_cost_for_two);
+        const restaurantName = cafe.restaurant.name;
+        const restaurantRating = cafe.restaurant.user_rating.aggregate_rating;
+        const costForTwo = cafe.restaurant.average_cost_for_two;
+        const restaurantAddress = cafe.restaurant.location.address;
+        const restaurantImage = cafe.restaurant.thumb
 
-        
+        const foodHtml = `
+            <p>Name: ${restaurantName}</p>
+            <p>Rating: ${restaurantRating}</p>
+            <p>Cost for two: ${costForTwo}</p>
+            <p>Address: ${restaurantAddress}</p>
+            <img src =${restaurantImage}>
+        `
 
-
-        if (cafe.restaurant.thumb) {
-            const foodHtml = `
-            <p>Name: ${cafe.restaurant.name}</p>
-            <p>Rating: ${cafe.restaurant.user_rating.aggregate_rating}</p>
-            <p>Cost for two: ${cafe.restaurant.average_cost_for_two}</p>
-            <p>Address: ${cafe.restaurant.location.address}</p>
-            <img src =${cafe.restaurant.thumb}>`
-                $('.container').append(foodHtml);
+        if (restaurantImage) {
+            foodApp.$foodContainer.append(foodHtml);
         }
-    
-    
     })
+}
 
+
+
+
+// DEFINE INIT METHOD THAT WILL INITIALIZE ANYTHING THAT NEEDS TO HAPPEN ON PAGE LOAD (START APP)
+foodApp.init = function(){
+    // CACHE jQUERY SELECTORS
+    foodApp.$foodContainer = $('.container')
+
+    // EVENT HANDLERS
+    foodApp.submitEventHandler();
 }
 
 
 $(document).ready(function(){
-
-
-
-    $('form').on('submit', function(e){
-        e.preventDefault();
-
-        $('.container').empty();
-        const foodChoice = $(`input[name=food]:checked`).val();
-        const countChoice = $(`input[name=count]:checked`).val();
-        const sortChoice = $(`input[name=sort]:checked`).val();
-        console.log(foodChoice);
-        console.log(countChoice);
-
-        teaApp.getTea(foodChoice, countChoice, sortChoice);
-
-        $('.container').empty();
-        teaApp.getTea(foodChoice);
-    });
+    // CALL THE INIT FUNCTION INSIDE JQUERY DOM SO THAT IT EXECUTES ON PAGE LOAD
+    foodApp.init();
 })
-
-
