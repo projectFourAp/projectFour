@@ -4,67 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Hungry Nyan Cat</title>
 </head>
 <body>
-    <h1>Tracker</h1>
-    <div>
-        <img src="./styles/assets/nyanCat.png" alt="">
-    </div>
-
-    <form >
-        <fieldset>
-            <legend>Food</legend>
-
-            <label for="iceCream">Ice Cream</label>
-            <input type="radio" name="food" value="233" id="iceCream">
-
-            <label for="tacos">Tacos</label>
-            <input type="radio" name="food" value="73" id="tacos">
-
-            <label for="ramen">Ramen</label>
-            <input type="radio" name="food" value="320" id="ramen">
-
-            <label for="dimSum">Dim Sum</label>
-            <input type="radio" name="food" value="411" id="dimSum">
-        </fieldset>
-
-        <fieldset>
-            <legend>Count</legend>
-        
-            <label for="five">5</label>
-            <input type="radio" name="count" value="5" id="five">
-        
-            <label for="ten">10</label>
-            <input type="radio" name="count" value="10" id="ten">
-        
-            <label for="fifthTeen">15</label>
-            <input type="radio" name="count" value="15" id="fifthTeen">
-        
-            <label for="twenty">20</label>
-            <input type="radio" name="count" value="20" id="twenty">
-        </fieldset>
-
-        <fieldset>
-            <legend>Sort</legend>
-        
-            <label for="juno">Juno (HackerYou)</label>
-            <input type="radio" name="sort" value="real_distance" id="juno">
-        
-            <label for="cost">Cost</label>
-            <input type="radio" name="sort" value="cost" id="cost">
-        
-            <label for="rating">Rating</label>
-            <input type="radio" name="sort" value="rating" id="rating">
-        </fieldset>
-
-
-
-    <button type="submit">Click MEME</button>
-
-    </form>
+    <header>
+        <h1>Hungry Nyan Cat</h1>
+        <div>
+            <img src="./styles/assets/nyanCat.png" alt="">
+        </div>
+    </header>
+    <main>
+        <section class="form">
+            <div class="wrapper">
+                <form>
+                    <fieldset>
+                        <legend>Food</legend>
     
-    <div class="container" id="choices"></div>
+                        <label for="iceCream">Ice Cream</label>
+                        <input type="radio" name="food" value="233" id="iceCream">
+    
+                        <label for="tacos">Tacos</label>
+                        <input type="radio" name="food" value="73" id="tacos">
+    
+                        <label for="ramen">Ramen</label>
+                        <input type="radio" name="food" value="320" id="ramen">
+    
+                        <label for="dimSum">Dim Sum</label>
+                        <input type="radio" name="food" value="411" id="dimSum">
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>Count</legend>
+                    
+                        <label for="five">5</label>
+                        <input type="radio" name="count" value="5" id="five">
+                    
+                        <label for="ten">10</label>
+                        <input type="radio" name="count" value="10" id="ten">
+                    
+                        <label for="fifthTeen">15</label>
+                        <input type="radio" name="count" value="15" id="fifthTeen">
+                    
+                        <label for="twenty">20</label>
+                        <input type="radio" name="count" value="20" id="twenty">
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>Sort</legend>
+                    
+                        <label for="juno">Juno (HackerYou)</label>
+                        <input type="radio" name="sort" value="real_distance" id="juno">
+                    
+                        <label for="cost">Cost</label>
+                        <input type="radio" name="sort" value="cost" id="cost">
+                    
+                        <label for="rating">Rating</label>
+                        <input type="radio" name="sort" value="rating" id="rating">
+                    </fieldset>
+    
+                    <button type="submit">Click MEME</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="restarants">
+            <div class="wrapper">
+                <ul class="restoContainer">
+                    <!-- NOTHING WILL EVER BE HERE IN THE HTML MARKUP. IT IS ALL DYNAMICALLY ADDED WITH THE JS -->
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
     
