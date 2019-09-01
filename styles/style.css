@@ -235,8 +235,255 @@ html {
   overflow: hidden;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 .wrapper {
   margin: 0 auto;
   max-width: 800px;
   width: 85%;
+}
+
+body {
+  background: #008083;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.6rem;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+ul,
+p,
+h1 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding-left: 0;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 2rem;
+}
+
+.errorMessage {
+  margin: 0 auto;
+  width: 570px;
+  height: 290px;
+  position: relative;
+  z-index: -10;
+  bottom: 50px;
+  background: #c0c0c0;
+}
+
+.errorMessage .headerLine {
+  margin: 1px;
+  background: #100dbe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.errorMessage .headerLine p {
+  padding-left: 7px;
+}
+
+.errorMessage .headerLine .close {
+  width: 23px;
+  height: 23px;
+  margin: 4px;
+  background: #c0c0c0;
+}
+
+.errorMessage .message {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.errorMessage .errorIcon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 70px;
+          flex: 0 1 70px;
+}
+
+.errorMessage .errorIcon img {
+  width: 100%;
+}
+
+.errorMessage h1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 400px;
+          flex: 0 1 400px;
+  font-family: 'VT323', monospace;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.errorMessage .instructions {
+  width: 400px;
+  padding-right: 20px;
+  margin-left: auto;
+  line-height: 2.5rem;
+}
+
+.errorMessage .meow {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.backgroundIcons {
+  position: absolute;
+}
+
+.cat {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  margin-top: 18vh;
+}
+
+.cat img {
+  width: 65%;
+}
+
+.icon {
+  color: white;
+  font-size: 1.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin: 10px 0 25px 7px;
+}
+
+.icon p {
+  margin: 0;
+}
+
+.lineBreak {
+  display: block;
+}
+
+main {
+  position: relative;
+}
+
+form {
+  width: 300px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #c0c0c0;
+}
+
+form fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form.display {
+  display: none;
+}
+
+.foodSelect {
+  width: 100%;
+  padding: 10px;
+}
+
+.submit {
+  width: 100%;
+  padding: 20px;
+}
+
+.bottomBar {
+  height: 50px;
+  width: 100%;
+  padding: 3px;
+  background: #c0c0c0;
+  border-top: 3px outset #ebebeb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.8rem;
+}
+
+.bottomBar .start {
+  width: 85px;
+  border: 2px outset black;
+  border-radius: 2px;
+  padding: 3px 0 0 0px;
+}
+
+.bottomBar .welcome {
+  width: 175px;
+  margin: 0 5px;
+  background: #ebebeb;
+  border: 2px inset black;
+  border-radius: 2px;
+  padding: 10px 0 0 14px;
 }

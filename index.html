@@ -4,68 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Hungry Nyan Cat</title>
 </head>
 <body>
     <header>
-        <h1>Hungry Nyan Cat</h1>
-        <div>
+        <div class="backgroundIcons">
+            <div class="icon">
+                <div>
+                    <img src="./styles/assets/computer_explorer.ico" alt="">
+                </div>
+                <p>My Computer</p>
+            </div>
+            <div class="icon">
+                <div>
+                    <img src="./styles/assets/msie2.ico" alt="">
+                </div>
+                <p>Internet <span class="lineBreak">Explorer</span></p>
+            </div>
+            <div class="icon">
+                <div>
+                    <img src="./styles/assets/recycle_bin_full.ico" alt="">
+                </div>
+                <p>Recycle Bin</p>
+            </div>
+        </div>
+        <div class="cat">
             <img src="./styles/assets/nyanCat.png" alt="">
+        </div>
+        <div class="errorMessage">
+            <div class="headerLine"><p>Error!</p> <div class="close"></div> </div>
+            <div class="message">
+                <div class="errorIcon">
+                    <img src="./styles/assets/msg_error.ico" alt="">
+                </div>
+                <h1>Hungry Nyan Cat</h1>
+            </div>
+            
+                <p class="instructions">Nyan Cat is hungry! Press 'Start' to choose their meal.</p>
+                <div class="meow">
+                    <button>Meow</button>
+                </div>
+            
         </div>
     </header>
     <main>
         <section class="form">
-            <div class="wrapper">
-                <form>
-                    <fieldset>
-                        <legend>Food</legend>
-    
-                        <label for="iceCream">Ice Cream</label>
-                        <input type="radio" name="food" value="233" id="iceCream">
-    
-                        <label for="tacos">Tacos</label>
-                        <input type="radio" name="food" value="73" id="tacos">
-    
-                        <label for="ramen">Ramen</label>
-                        <input type="radio" name="food" value="320" id="ramen">
-    
-                        <label for="dimSum">Dim Sum</label>
-                        <input type="radio" name="food" value="411" id="dimSum">
-                    </fieldset>
-    
-                    <fieldset>
-                        <legend>Count</legend>
-                    
-                        <label for="five">5</label>
-                        <input type="radio" name="count" value="5" id="five">
-                    
-                        <label for="ten">10</label>
-                        <input type="radio" name="count" value="10" id="ten">
-                    
-                        <label for="fifthTeen">15</label>
-                        <input type="radio" name="count" value="15" id="fifthTeen">
-                    
-                        <label for="twenty">20</label>
-                        <input type="radio" name="count" value="20" id="twenty">
-                    </fieldset>
-    
-                    <fieldset>
-                        <legend>Sort</legend>
-                    
-                        <label for="juno">Juno (HackerYou)</label>
-                        <input type="radio" name="sort" value="real_distance" id="juno">
-                    
-                        <label for="cost">Cost</label>
-                        <input type="radio" name="sort" value="cost" id="cost">
-                    
-                        <label for="rating">Rating</label>
-                        <input type="radio" name="sort" value="rating" id="rating">
-                    </fieldset>
-    
-                    <button type="submit">Click MEME</button>
-                </form>
-            </div>
+            <!-- <div class="wrapper"> -->
+            <form class="display">
+                <label for=""></label>
+                    <select name="food" id="food" class="foodSelect">
+                        <optgroup label="Type of Food?">
+                            <option value="233">Ice Cream</option>
+                            <option value="73">Tacos</option>
+                            <option value="320">Ramen</option>
+                            <option value="411">Dim Sum</option>
+                        </optgroup>
+                    </select>
+                <label for=""></label>
+                    <select name="results" id="results" class="foodSelect">
+                        <optgroup label="Number of results?">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </optgroup>
+                    </select>
+                <label for=""></label>
+                    <select name="sort" id="sort" class="foodSelect">
+                        <optgroup label="How to sort?">
+                            <option value="real_distance">Distance(from HackerYou)</option>
+                            <option value="cost">Cost</option>
+                            <option value="rating">Rating</option>
+                        </optgroup>
+                    </select>
+            
+                <button class="submit" type="submit">Click MEME</button>
+            </form>
+            <!-- </div> -->
         </section>
 
         <section class="restarants">
@@ -77,7 +94,11 @@
         </section>
     </main>
     <footer>
+        <div class="bottomBar">
+            <button class="start">Start</button>
 
+            <div class="welcome">Welcome</div>
+        </div>
     </footer>
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>

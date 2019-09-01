@@ -20,9 +20,9 @@ foodApp.submitEventHandler = function() {
 
 // METHOD THAT COLLECTS USER INPUT AND PASSES THE INFO AS ARGUMENTS TO THE API
 foodApp.collectUserInfo = function () {
-        const $foodChoice = $(`input[name=food]:checked`).val();
-        const $countChoice = $(`input[name=count]:checked`).val();
-        const $sortChoice = $(`input[name=sort]:checked`).val();
+        const $foodChoice = $('#food').val();
+        const $countChoice = $('#results').val();
+        const $sortChoice = $('#sort').val();
         console.log($foodChoice);
         console.log($countChoice);
         console.log($sortChoice);
@@ -91,6 +91,10 @@ foodApp.init = function(){
 
     // EVENT HANDLERS
     foodApp.submitEventHandler();
+
+    $('.start').on('click', function(){
+        $('form').toggleClass('display');
+    })
 }
 
 

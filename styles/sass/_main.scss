@@ -1,0 +1,38 @@
+main {
+    position: relative;
+}
+
+form {
+    width: 300px;
+    background: white;
+    // margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    fieldset {
+        // border: none;
+        display: flex;
+        flex-direction: column;
+    }
+    // display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #c0c0c0;
+}
+
+form.display {
+    display: none;
+}
+
+.foodSelect {
+    width: 100%;
+    padding: 10px;
+}
+
+.submit {
+    width: 100%;
+    padding: 20px;
+}
+

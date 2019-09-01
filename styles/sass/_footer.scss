@@ -1,0 +1,31 @@
+footer {
+    
+}
+
+.bottomBar {
+    height: 50px;
+    width: 100%;
+    padding: 3px;
+    background: #c0c0c0;
+    border-top: 3px outset #ebebeb;
+    display: flex;
+    font-size: 1.8rem;
+    .start {
+        width: 85px;
+        border: 2px outset black;
+        border-radius: 2px;
+        padding: 3px 0 0 0px;
+    }
+    .welcome {
+        width: 175px;
+        margin: 0 5px;
+        background: #ebebeb;
+        border: 2px inset black;
+        border-radius: 2px;
+        padding: 10px 0 0 14px;
+    }
+}
+
+
+
+
