@@ -36,14 +36,14 @@ form.display {
     background: #c0c0c0;
     text-align: left;
     background: #808080;
-    font-family: 'VT323', monospace;
+    font-family: $mainFont;
     color: white;
     font-size: 3rem;
 }
 
 .formHeader {
     background: #808080;
-    font-family: 'VT323', monospace;
+    font-family: $mainFont;
     color: white;
     font-size: 3rem;
 }
