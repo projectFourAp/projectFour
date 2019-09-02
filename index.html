@@ -30,22 +30,30 @@
                 <p>Recycle Bin</p>
             </div>
         </div>
-        <div class="cat">
-            <img src="./styles/assets/nyanCat.png" alt="">
+        <div class="rainbow">
+            <img src="styles/assets/rainbow.png" alt="">
         </div>
+        <!-- <div class="cat">
+            <img src="./styles/assets/nyanCat.png" alt="">
+        </div> -->
         <div class="errorMessage">
-            <div class="headerLine"><p>Error!</p> <div class="close"></div> </div>
-            <div class="message">
-                <div class="errorIcon">
-                    <img src="./styles/assets/msg_error.ico" alt="">
+            <div class="headerLine">
+                <p>Error!</p> 
+                <div class="close"></div> 
+            </div>
+            <div class="insideMessage">
+                <div class="nyanIcon">
+                    <img src="./styles/assets/nyanIcon.ico" alt="">
                 </div>
-                <h1>Hungry Nyan Cat</h1>
+                <div class="message">
+                    <h1>Hungry Nyan Cat</h1>
+                    <p class="instructions">Nyan Cat is hungry! Press 'Meow' to choose their meal.</p>
+                </div>
             </div>
             
-                <p class="instructions">Nyan Cat is hungry! Press 'Start' to choose their meal.</p>
-                <div class="meow">
-                    <button>Meow</button>
-                </div>
+            <div class="meow">
+                <button class="meowButton">Meow</button>
+            </div>
             
         </div>
     </header>
@@ -53,6 +61,9 @@
         <section class="form">
             <!-- <div class="wrapper"> -->
             <form class="display">
+                <div class="formHeader">
+                    <p>Choose Below:</p>
+                </div>
                 <label for=""></label>
                     <select name="food" id="food" class="foodSelect">
                         <optgroup label="Type of Food?">
@@ -65,10 +76,10 @@
                 <label for=""></label>
                     <select name="results" id="results" class="foodSelect">
                         <optgroup label="Number of results?">
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="20">20</option>
+                            <option value="5">Five</option>
+                            <option value="10">Ten</option>
+                            <option value="15">Fiftheen</option>
+                            <option value="20">Twenty</option>
                         </optgroup>
                     </select>
                 <label for=""></label>
@@ -80,17 +91,17 @@
                         </optgroup>
                     </select>
             
-                <button class="submit" type="submit">Click MEME</button>
+                <button class="submit" type="submit">Submit</button>
             </form>
             <!-- </div> -->
         </section>
 
-        <section class="restarants">
-            <div class="wrapper">
+        <section class="restarants show">
+            <!-- <div class="wrapper"> -->
                 <ul class="restoContainer">
                     <!-- NOTHING WILL EVER BE HERE IN THE HTML MARKUP. IT IS ALL DYNAMICALLY ADDED WITH THE JS -->
                 </ul>
-            </div>
+            <!-- </div> -->
         </section>
     </main>
     <footer>

@@ -1,22 +1,14 @@
 header {
     display: flex;
-    
-    flex-wrap: wrap;
-    font-size: 2rem;
-    // justify-content: center;
-
-
-   
+    align-items: center;
+    height: 100vh; 
 }
 
 .errorMessage {
-    margin: 0 auto;
     width: 570px;
-    height: 290px;
-    position: relative;
-    z-index: -10;
-    bottom: 50px;
+    height: 250px;
     background: #c0c0c0;
+    border: 3px outset #ebebeb; 
     .headerLine {
         margin: 1px;
         background: rgb(16, 13, 190);
@@ -34,53 +26,55 @@ header {
             background: #c0c0c0;
         }
     }
-    .message {
-        padding-top: 30px;
+    .insideMessage {
         display: flex;
-        justify-content: center;
-        // align-items: ;
+        justify-content: space-between;
+        align-items: center;
     }
-    .errorIcon {
-        flex: 0 1 70px;
-        img {
-            width: 100%;
-        }
+    .message {
+        width: 370px;
+    }
+    .nyanIcon {
+       width: 150px;
+       margin-left: 10px;
+       img {
+           width: 100%;
+       }
     }
     h1 {
-        flex: 0 1 400px;
+        margin-bottom: 10px;
         font-family: 'VT323', monospace;
         font-size: 5rem;
-        // margin: 180px 0 0;
-        // flex: 1 1 100%;
-        text-align: center;
-        // color: white;
-        // text-shadow: 2px 2px 4px black;
     }
     .instructions {
-        width: 400px;
-        padding-right: 20px;
-        margin-left: auto;
-        line-height: 2.5rem;
+        font-size: 1.8rem;
     }
     .meow {
-        padding-top: 30px;
+        padding-top: 5px;
         display: flex;
         justify-content: center;
     }
-
 }
 
 .backgroundIcons {
     position: absolute;
+    top: 0;
+}
+
+.rainbow {
+    flex-shrink: 1;
+    img {
+        width: 100%;
+    }
 }
 
 .cat {
     // width: 100%;
     // animation: shake 4s infinite;
     flex: 0 1 100%;
-    margin-top: 18vh;
+    margin-top: 16vh;
     img {
-        width: 65%;
+        width: 45%;
     }
 }
 

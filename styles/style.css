@@ -261,12 +261,6 @@ body {
   font-size: 1.6rem;
 }
 
-main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
-}
-
 ul,
 p,
 h1 {
@@ -283,19 +277,17 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  font-size: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
 }
 
 .errorMessage {
-  margin: 0 auto;
   width: 570px;
-  height: 290px;
-  position: relative;
-  z-index: -10;
-  bottom: 50px;
+  height: 250px;
   background: #c0c0c0;
+  border: 3px outset #ebebeb;
 }
 
 .errorMessage .headerLine {
@@ -324,44 +316,43 @@ header {
   background: #c0c0c0;
 }
 
-.errorMessage .message {
-  padding-top: 30px;
+.errorMessage .insideMessage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.errorMessage .errorIcon {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 70px;
-          flex: 0 1 70px;
+.errorMessage .message {
+  width: 370px;
 }
 
-.errorMessage .errorIcon img {
+.errorMessage .nyanIcon {
+  width: 150px;
+  margin-left: 10px;
+}
+
+.errorMessage .nyanIcon img {
   width: 100%;
 }
 
 .errorMessage h1 {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 400px;
-          flex: 0 1 400px;
+  margin-bottom: 10px;
   font-family: 'VT323', monospace;
   font-size: 5rem;
-  text-align: center;
 }
 
 .errorMessage .instructions {
-  width: 400px;
-  padding-right: 20px;
-  margin-left: auto;
-  line-height: 2.5rem;
+  font-size: 1.8rem;
 }
 
 .errorMessage .meow {
-  padding-top: 30px;
+  padding-top: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -372,17 +363,27 @@ header {
 
 .backgroundIcons {
   position: absolute;
+  top: 0;
+}
+
+.rainbow {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+}
+
+.rainbow img {
+  width: 100%;
 }
 
 .cat {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 100%;
           flex: 0 1 100%;
-  margin-top: 18vh;
+  margin-top: 16vh;
 }
 
 .cat img {
-  width: 65%;
+  width: 45%;
 }
 
 .icon {
@@ -415,6 +416,7 @@ main {
 }
 
 form {
+  border: 2px outset #ebebeb;
   width: 300px;
   background: white;
   display: -webkit-box;
@@ -436,32 +438,49 @@ form {
   background: #c0c0c0;
 }
 
-form fieldset {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 form.display {
   display: none;
 }
 
-.foodSelect {
+.foodSelect,
+.formHeader {
   width: 100%;
-  padding: 10px;
+  padding: 20px;
+  background: #c0c0c0;
+  border: 2px outset #c0c0c0;
 }
 
 .submit {
   width: 100%;
   padding: 20px;
+  background: #c0c0c0;
+  text-align: left;
+  background: #808080;
+  font-family: 'VT323', monospace;
+  color: white;
+  font-size: 3rem;
+}
+
+.formHeader {
+  background: #808080;
+  font-family: 'VT323', monospace;
+  color: white;
+  font-size: 3rem;
+}
+
+.restarants {
+  position: absolute;
+  bottom: 0;
+  width: 800px;
+  height: 60vh;
+}
+
+.restarants.show {
+  display: none;
 }
 
 .bottomBar {
-  height: 50px;
+  height: 44px;
   width: 100%;
   padding: 3px;
   background: #c0c0c0;
@@ -476,7 +495,7 @@ form.display {
   width: 85px;
   border: 2px outset black;
   border-radius: 2px;
-  padding: 3px 0 0 0px;
+  padding: 2px 0 0 0px;
 }
 
 .bottomBar .welcome {
@@ -485,5 +504,5 @@ form.display {
   background: #ebebeb;
   border: 2px inset black;
   border-radius: 2px;
-  padding: 10px 0 0 14px;
+  padding: 7px 0 0 14px;
 }

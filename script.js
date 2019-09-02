@@ -14,6 +14,8 @@ foodApp.submitEventHandler = function() {
         foodApp.$foodContainer.empty();
         // CALL THE FUNCTION TO GET USER'S INPUT
         foodApp.collectUserInfo();
+
+        $('.restaurants').removeClass('show')
     });
 }
 
@@ -92,7 +94,7 @@ foodApp.init = function(){
     // EVENT HANDLERS
     foodApp.submitEventHandler();
 
-    $('.start').on('click', function(){
+    $('.meowButton').on('click', function(){
         $('form').toggleClass('display');
     })
 }
