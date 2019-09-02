@@ -2,7 +2,7 @@
 const foodApp = {} ;
 
 foodApp.baseURL = `https://developers.zomato.com/api/v2.1/search`;
-foodApp.apiKey = `ab555e02f8cc7344c070a66a218852f7`;
+foodApp.apiKey = `5416b98103bb7eea022d4e48660e0827`;
 
 
 // METHOD THAT CONTAINS AN EVENT LISTENER FOR FORM SUBMIT
@@ -16,6 +16,8 @@ foodApp.submitEventHandler = function() {
         foodApp.collectUserInfo();
 
         $('section').removeClass('show')
+
+        $('form').toggleClass('display');
     });
 }
 
