@@ -6,6 +6,12 @@ section.restarants {
     height: 85vh;
     background: $grey;
     border: 2px outset $lightgrey;
+
+    @include mq-1110 {
+        position: static;
+        
+
+    }
 }
 
 section.show {
@@ -19,7 +25,14 @@ section.show {
    .resto {
        flex: 0 1 25%;
        padding: 0 10px 0;
+
+       @include mq-1110 {
+        flex: 0 1 25%;
+        padding: 0 10px 0;
+        }
    }
+   
+
 
    .restoTitle {
         font-family: $mainFont;
@@ -30,6 +43,7 @@ section.show {
         img {
             width: 100%;
         }
+        
     }
 
     .restoInfo {
