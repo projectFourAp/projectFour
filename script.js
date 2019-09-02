@@ -60,7 +60,6 @@ foodApp.getFood = function (cuisineId, number, type) {
 
 // METHOD THAT ACCEPTS DATA FROM API AS AN ARGUMENT AND RENDERS IT TO THE DOM TO ULTIMATELY DISPLAY IT ON THE PAGE
 foodApp.displayFood = function(result){
-    // console.log(result.restaurants);
     result.restaurants.forEach(function(cafe){
 
         const restaurantName = cafe.restaurant.name;

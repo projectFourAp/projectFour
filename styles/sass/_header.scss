@@ -106,9 +106,13 @@ header {
             padding-top: 5px;
             display: flex;
             justify-content: center;
+            :focus {
+            outline: 2px solid yellow;
+            }
             @include mq-700 {
                 padding-top: 14px;
             }
+
         }
     }
 }

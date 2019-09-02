@@ -38,7 +38,7 @@
         }
     }
 
-     @mixin mq-500 {
+    @mixin mq-500 {
         @media (max-width: 500px) {
             @content;
         }

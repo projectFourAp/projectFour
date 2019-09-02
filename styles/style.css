@@ -457,6 +457,10 @@ header .errorMessage .meow {
           justify-content: center;
 }
 
+header .errorMessage .meow :focus {
+  outline: 2px solid yellow;
+}
+
 @media (max-width: 700px) {
   header .errorMessage .meow {
     padding-top: 14px;
@@ -497,12 +501,23 @@ form.display {
   text-align: left;
 }
 
+.foodSelect:focus,
+.formHeader:focus,
+.submit:focus {
+  outline: 2px solid yellow;
+}
+
 .submit,
 .formHeader {
   background: #808080;
   font-family: "VT323", monospace;
   color: white;
   font-size: 3rem;
+}
+
+.submit:focus,
+.formHeader:focus {
+  outline: 2px solid yellow;
 }
 
 section.restarants {
