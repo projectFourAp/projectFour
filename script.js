@@ -14,15 +14,17 @@ foodApp.submitEventHandler = function() {
         foodApp.$foodContainer.empty();
         // CALL THE FUNCTION TO GET USER'S INPUT
         foodApp.collectUserInfo();
+
+        $('.restaurants').removeClass('show')
     });
 }
 
 
 // METHOD THAT COLLECTS USER INPUT AND PASSES THE INFO AS ARGUMENTS TO THE API
 foodApp.collectUserInfo = function () {
-        const $foodChoice = $(`input[name=food]:checked`).val();
-        const $countChoice = $(`input[name=count]:checked`).val();
-        const $sortChoice = $(`input[name=sort]:checked`).val();
+        const $foodChoice = $('#food').val();
+        const $countChoice = $('#results').val();
+        const $sortChoice = $('#sort').val();
         console.log($foodChoice);
         console.log($countChoice);
         console.log($sortChoice);
@@ -91,6 +93,10 @@ foodApp.init = function(){
 
     // EVENT HANDLERS
     foodApp.submitEventHandler();
+
+    $('.meowButton').on('click', function(){
+        $('form').toggleClass('display');
+    })
 }
 
 

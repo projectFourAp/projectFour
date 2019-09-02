@@ -1,0 +1,49 @@
+main {
+    position: relative;
+    // height: 0;
+}
+
+form {
+    border: 2px outset #ebebeb;
+    width: 300px;
+    background: white;
+    // margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #c0c0c0;
+}
+
+form.display {
+    display: none;
+}
+
+.foodSelect,
+.formHeader {
+    width: 100%;
+    padding: 20px;
+    background: #c0c0c0;
+    border: 2px outset #c0c0c0;
+}
+
+.submit {
+    width: 100%;
+    padding: 20px;
+    background: #c0c0c0;
+    text-align: left;
+    background: #808080;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 3rem;
+}
+
+.formHeader {
+    background: #808080;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 3rem;
+}

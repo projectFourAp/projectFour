@@ -1,5 +1,32 @@
+html {
+    font-size: 62.5%;
+}
+
 .wrapper {
     margin: 0 auto;
     max-width: 800px;
     width: 85%;
+}
+
+body {
+    background: rgb(0, 128, 131);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.6rem;
+}
+main {
+    // flex: 1 1 100%;
+}
+
+ul,
+p,
+h1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    padding-left: 0;
 }
