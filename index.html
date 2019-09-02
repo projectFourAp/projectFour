@@ -10,6 +10,7 @@
     <title>Hungry Nyan Cat</title>
 </head>
 <body>
+    <!-- HEADER STARTS HERE -->
     <header>
         <div class="backgroundIcons">
             <div class="icon">
@@ -34,9 +35,6 @@
         <div class="rainbow">
             <img src="styles/assets/rainbow.png" alt="">
         </div>
-        <!-- <div class="cat">
-            <img src="./styles/assets/nyanCat.png" alt="">
-        </div> -->
         <div class="errorMessage">
             <div class="headerLine">
                 <p>Error!</p> 
@@ -51,21 +49,20 @@
                     <p class="instructions">Nyan Cat is hungry! Press 'Meow' to choose their meal.</p>
                 </div>
             </div>
-            
             <div class="meow">
                 <button class="meowButton">Meow</button>
-            </div>
-            
+            </div> 
         </div>
     </header>
+    <!-- MAIN STARTS HERE -->
     <main>
+        <!-- FORM STARTS HERE -->
         <section class="form">
-            <!-- <div class="wrapper"> -->
             <form class="display">
                 <div class="formHeader">
                     <p>Choose Below:</p>
                 </div>
-                <label for=""></label>
+                <label for="food" class="visuallyhidden">Type of Food</label>
                     <select name="food" id="food" class="foodSelect">
                         <optgroup label="Type of Food?">
                             <option value="233">Ice Cream</option>
@@ -74,7 +71,7 @@
                             <option value="411">Dim Sum</option>
                         </optgroup>
                     </select>
-                <label for=""></label>
+                <label for="results" class="visuallyhidden">Number of Results</label>
                     <select name="results" id="results" class="foodSelect">
                         <optgroup label="Number of results?">
                             <option value="2">Two</option>
@@ -83,7 +80,7 @@
                             <option value="8">Eight</option>
                         </optgroup>
                     </select>
-                <label for=""></label>
+                <label for="sort" class="visuallyhidden">How to sort results</label>
                     <select name="sort" id="sort" class="foodSelect">
                         <optgroup label="How to sort?">
                             <option value="real_distance">Distance(from HackerYou)</option>
@@ -94,29 +91,24 @@
             
                 <button class="submit" type="submit">Submit</button>
             </form>
-            <!-- </div> -->
         </section>
-
+        <!-- RESTAURANT CONTAINER STARTS HERE -->
         <section class="restarants show">
             <i class="fas fa-times cross"></i>
-            <!-- <div class="wrapper"> -->
-                <div class="restoContainer">
-                    
-                    <!-- NOTHING WILL EVER BE HERE IN THE HTML MARKUP. IT IS ALL DYNAMICALLY ADDED WITH THE JS -->
-                </div>
-            <!-- </div> -->
+            <div class="restoContainer">
+                <!-- DYNAMIC JS HTML ADDED HERE -->
+            </div>
         </section>
     </main>
+    <!-- FOOTER STARTS HERE -->
     <footer>
         <div class="bottomBar">
             <button class="start">Start</button>
-
             <div class="welcome">Welcome</div>
         </div>
     </footer>
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
-    
     <script src="script.js"></script>
 </body>
 </html>
