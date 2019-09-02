@@ -6,8 +6,8 @@ footer {
     height: 44px;
     width: 100%;
     padding: 3px;
-    background: #c0c0c0;
-    border-top: 3px outset #ebebeb;
+    background: $grey;
+    border-top: 3px outset $lightgrey;
     display: flex;
     font-size: 1.8rem;
     .start {
@@ -19,7 +19,7 @@ footer {
     .welcome {
         width: 175px;
         margin: 0 5px;
-        background: #ebebeb;
+        background: $lightgrey;
         border: 2px inset black;
         border-radius: 2px;
         padding: 7px 0 0 14px;

@@ -323,6 +323,12 @@ header .rainbow img {
   width: 100%;
 }
 
+@media (max-width: 700px) {
+  header .rainbow {
+    display: none;
+  }
+}
+
 header .cat {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 100%;
@@ -339,6 +345,14 @@ header .errorMessage {
   height: 250px;
   background: #c0c0c0;
   border: 3px outset #ebebeb;
+}
+
+@media (max-width: 700px) {
+  header .errorMessage {
+    margin: 0 auto;
+    width: 470px;
+    height: 200px;
+  }
 }
 
 header .errorMessage .headerLine {
@@ -394,7 +408,7 @@ header .errorMessage .nyanIcon img {
 
 header .errorMessage h1 {
   margin-bottom: 10px;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
   font-size: 5rem;
 }
 
@@ -449,7 +463,7 @@ form.display {
 .submit,
 .formHeader {
   background: #808080;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
   color: white;
   font-size: 3rem;
 }
@@ -484,7 +498,7 @@ section.show {
 }
 
 .restoContainer .restoTitle {
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
   font-size: 3rem;
 }
 
