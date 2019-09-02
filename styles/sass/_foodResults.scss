@@ -6,6 +6,11 @@ section.restarants {
     height: 85vh;
     background: $grey;
     border: 2px outset $lightgrey;
+    @include mq-1100 {
+        position: static;
+        margin: 0 auto;
+        height: 100%;
+    }
 }
 
 section.show {
@@ -19,6 +24,9 @@ section.show {
    .resto {
        flex: 0 1 25%;
        padding: 0 10px 0;
+       @include mq-570 {
+           flex: 1 1 25%;
+       }
    }
 
    .restoTitle {

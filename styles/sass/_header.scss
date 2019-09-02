@@ -5,6 +5,7 @@ header {
     .backgroundIcons {
         position: absolute;
         top: 0;
+        z-index: -10;
     }
     .icon {
         color: white;
@@ -42,7 +43,7 @@ header {
         border: 3px outset $lightgrey; 
         @include mq-700 {
             margin: 0 auto;
-            width: 470px;
+            width: 420px;
             height: 200px;
         }
         .headerLine {
@@ -69,10 +70,19 @@ header {
         }
         .message {
             width: 370px;
+            @include mq-700 {
+                width: 300px;
+            }
+            @include mq-500 {
+                width: 230px;
+            }
         }
         .nyanIcon {
             width: 150px;
             margin-left: 10px;
+            @include mq-700 {
+                width: 90px;
+            }
             img {
                 width: 100%;
             }
@@ -81,14 +91,24 @@ header {
             margin-bottom: 10px;
             font-family: $mainFont;
             font-size: 5rem;
+            @include mq-700 {
+                font-size: 3.5rem;
+            }
         }
         .instructions {
             font-size: 1.8rem;
+            @include mq-700 {
+                font-size: 1.6rem;
+            }
+            
         }
         .meow {
             padding-top: 5px;
             display: flex;
             justify-content: center;
+            @include mq-700 {
+                padding-top: 14px;
+            }
         }
     }
 }

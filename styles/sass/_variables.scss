@@ -19,8 +19,29 @@
 
     //  MIXINS
 
+    @mixin mq-1100 {
+        @media (max-width: 1100px) {
+            @content;
+        }
+    }
+    
+    
     @mixin mq-700 {
         @media (max-width: 700px) {
             @content;
         }
     }
+
+    @mixin mq-570 {
+        @media (max-width: 570px) {
+            @content;
+        }
+    }
+
+     @mixin mq-500 {
+        @media (max-width: 500px) {
+            @content;
+        }
+    }
+
+    
