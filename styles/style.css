@@ -237,6 +237,32 @@ html {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 800px;
-  width: 85%;
+  width: 90%;
+}
+
+.header {
+  margin: 0 auto;
+  border: 2px solid tomato;
+}
+
+.restoContainer {
+  border: 2px solid tomato;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2rem;
+}
+
+.resto {
+  border: 4px solid tomato;
+  background: yellow;
+}
+
+.restoTitle {
+  color: blue;
+}
+
+html {
+  font-size: 125%;
 }

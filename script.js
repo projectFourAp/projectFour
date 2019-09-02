@@ -66,13 +66,15 @@ foodApp.displayFood = function(result){
         const restaurantImage = cafe.restaurant.thumb
 
         const foodHtml = `
-        <li>
-            <p>Name: ${restaurantName}</p>
-            <p>Rating: ${restaurantRating}</p>
-            <p>Cost for two: ${costForTwo}</p>
-            <p>Address: ${restaurantAddress}</p>
-            <img src =${restaurantImage}>
-        </li>
+        <div class="resto">
+            <div class="restoImage">
+                <img src =${restaurantImage}>
+            </div>
+            <h2 class="restoTitle">Name: ${restaurantName}</h2>
+            <p class="restoAddress">Address: ${restaurantAddress}</p>
+            <p class="restoRating">Rating: ${restaurantRating}</p>
+            <p class="restoCostTwo">Cost for two: $${costForTwo}</p>
+        </div>
         `
 
         if (restaurantImage) {
