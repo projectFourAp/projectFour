@@ -4,8 +4,8 @@ section.restarants {
     right: 150px;
     width: 80%;
     height: 85vh;
-    background: #c0c0c0;
-    border: 2px outset #ebebeb;
+    background: $grey;
+    border: 2px outset $lightgrey;
 }
 
 section.show {
@@ -22,7 +22,7 @@ section.show {
    }
 
    .restoTitle {
-        font-family: 'VT323', monospace;
+        font-family: $mainFont;
         font-size: 3rem;
     }
     .restoImage{
