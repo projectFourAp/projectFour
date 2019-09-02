@@ -1,11 +1,44 @@
-.restarants {
+section.restarants {
     position: absolute;
-    bottom: 0;
-    width: 800px;
-    height: 60vh;
+    bottom: 60px;
+    right: 150px;
+    width: 80%;
+    height: 85vh;
+    background: #c0c0c0;
+    border: 2px outset #ebebeb;
 }
 
-.restarants.show {
+section.show {
     display: none;
 }
+
+
+.restoContainer {
+   display: flex;
+   flex-wrap: wrap;
+   .resto {
+       flex: 0 1 25%;
+       padding: 0 10px 0;
+   }
+
+   .restoTitle {
+        font-family: 'VT323', monospace;
+        font-size: 3rem;
+    }
+    .restoImage{
+        width: 25%;
+        img {
+            width: 100%;
+        }
+    }
+
+    .restoInfo {
+        width: 200px;
+        margin: 0 auto;
+    } 
+
+}
+
+
+
 

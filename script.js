@@ -15,7 +15,7 @@ foodApp.submitEventHandler = function() {
         // CALL THE FUNCTION TO GET USER'S INPUT
         foodApp.collectUserInfo();
 
-        $('.restaurants').removeClass('show')
+        $('section').removeClass('show')
     });
 }
 
@@ -67,15 +67,18 @@ foodApp.displayFood = function(result){
         const restaurantAddress = cafe.restaurant.location.address;
         const restaurantImage = cafe.restaurant.thumb
 
-        const foodHtml = `
-        <li>
-            <p>Name: ${restaurantName}</p>
-            <p>Rating: ${restaurantRating}</p>
-            <p>Cost for two: ${costForTwo}</p>
-            <p>Address: ${restaurantAddress}</p>
-            <img src =${restaurantImage}>
-        </li>
-        `
+        const foodHtml = 
+        `<div class=resto>
+            <div class=restoInfo>
+                <img src =${restaurantImage}>
+            
+            
+                <h2 class=restoTitle>${restaurantName}</h2>
+                <p class=restoAddress>Address: ${restaurantAddress}</p>
+                <p class=restoRating>Rating: ${restaurantRating}</p>
+                <p class=restoCostTwo>Cost for two: $${costForTwo}</p>
+            </div>
+        </div>`
 
         if (restaurantImage) {
             foodApp.$foodContainer.append(foodHtml);
@@ -96,6 +99,10 @@ foodApp.init = function(){
 
     $('.meowButton').on('click', function(){
         $('form').toggleClass('display');
+    })
+
+    $('i').on('click', function(){
+        location.reload(true);
     })
 }
 

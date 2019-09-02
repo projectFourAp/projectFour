@@ -263,7 +263,7 @@ body {
 
 ul,
 p,
-h1 {
+h1, h2 {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -468,15 +468,51 @@ form.display {
   font-size: 3rem;
 }
 
-.restarants {
+section.restarants {
   position: absolute;
-  bottom: 0;
-  width: 800px;
-  height: 60vh;
+  bottom: 60px;
+  right: 150px;
+  width: 80%;
+  height: 85vh;
+  background: #c0c0c0;
+  border: 2px outset #ebebeb;
 }
 
-.restarants.show {
+section.show {
   display: none;
+}
+
+.restoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.restoContainer .resto {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+  padding: 0 10px 0;
+}
+
+.restoContainer .restoTitle {
+  font-family: 'VT323', monospace;
+  font-size: 3rem;
+}
+
+.restoContainer .restoImage {
+  width: 25%;
+}
+
+.restoContainer .restoImage img {
+  width: 100%;
+}
+
+.restoContainer .restoInfo {
+  width: 200px;
+  margin: 0 auto;
 }
 
 .bottomBar {
